@@ -1,5 +1,27 @@
 ﻿// Задайте двумерный массив. Напишите программу, которая заменяет строкина столбцы. В случае, если это невозможно, программа должна вывнсти сообщения пользователя
 
+int[, ] CreateMatrix(int[, ] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            //int x = Convert.ToInt32(Console.ReadLine());
+            int x = new Random().Next(1, 100);
+            matrix[i , j] = x;
+        }
+    }
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            Console.Write(matrix[i, j] + "\t");
+        }
+        Console.WriteLine();
+    }
+
+    return matrix;
+}
 
 
 
@@ -34,3 +56,7 @@ void AvgMatrix(int[, ] matrix)
         Console.WriteLine("Такое невозможно!");
 
 }
+
+int[, ] matrix = new int[4, 4];
+matrix = CreateMatrix(matrix);
+AvgMatrix(matrix);

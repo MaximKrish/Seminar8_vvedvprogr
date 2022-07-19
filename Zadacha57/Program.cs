@@ -1,7 +1,26 @@
 ﻿// Составить частотный словарь элементов двумерного массива. Частотный словарь содержит информацию о том, сколько раз встречается элемент входных данных
+int[, ] CreateMatrix(int[, ] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            //int x = Convert.ToInt32(Console.ReadLine());
+            int x = new Random().Next(1, 100);
+            matrix[i , j] = x;
+        }
+    }
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            Console.Write(matrix[i, j] + "\t");
+        }
+        Console.WriteLine();
+    }
 
-
-
+    return matrix;
+}
 
 void AvgMatrix(int[, ] matrix)
 {
@@ -29,3 +48,6 @@ void AvgMatrix(int[, ] matrix)
 
 }
 
+int[, ] matrix = new int[4, 4];
+matrix = CreateMatrix(matrix);
+AvgMatrix(matrix);
