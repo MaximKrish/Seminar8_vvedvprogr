@@ -40,7 +40,7 @@ void AvgMatrix(int[, ] matrix)
         int count = 1;
         for (int j = 0; j < array.Length; j++)
         {
-            if(array[i] == array[j] && i != j)
+            if(array[i] == array[j] && i != j)      // array[i] == array[j] && i != j - проходим по каждому элементу массива и их индексы не совпадают
                 count++;
         }
         Console.WriteLine(array[i] + " встречается " + count + " раз");
